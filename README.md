@@ -58,3 +58,9 @@ to perform (x + 1) * 2 on a list of x. \
   * ***add_one and multiple_two***: perform x + 1 / perform x * 2
   * ***main function***: initializes the buffers and locks, creates the threads, and use signal to implement timeout mechanism.
 
+\
+Notes:
++  use - 1 as stop signal
++ prevent to release lock under timeout
++ timmer + cancel thread 
+
