@@ -41,7 +41,7 @@ Because concurrentcy design is more complex and could cost extra overhead such a
   * sequential proccessing x >> x += 1 >> x *= 2 >> prinf x
   * only main function calling producer_consumer function
 - Concurrency design
--- ***Buffer struct*** for synchronization of data
+  -- ***Buffer struct*** for synchronization of data
   * this struct will not only provide a space for produser and consumer, but make sure the data flow work in order (x >> x += 1 >> x *= 2 >> prinf x).
   * ***produce function*** to add item to the buffer, wait if the buffer is full, and decrease empty count.
   * ***consume function*** to remove item from the buffer, wait if the buffer is empty, and decrease full count.
