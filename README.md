@@ -34,7 +34,7 @@ Because concurrentcy design is more complex and could cost extra overhead such a
 # Programs description
 ### Task description
 
-to perform (x + 1) * 2 on a list of x.
+to perform (x + 1) * 2 on a list of x. \
 (we want to make sure procedure order for each x is correct)
 
 - Simple design (only one thread)
