@@ -33,9 +33,12 @@ Because concurrentcy design is more complex and could cost extra overhead such a
 -----
 # Programs description
 ### Task description
+
 - Simple design (only one thread)
 - Concurrency design
+
 ![...](/ConcurrencyDesign.png)
+
 ### Program description
 - Simple design
   * sequential proccessing x >> x += 1 >> x *= 2 >> prinf x
