@@ -56,7 +56,55 @@ to perform (x + 1) * 2 on a list of x. \
   -- ***The functions*** for independent sub-tasks
   * ***producer and consumer***: create list of x / printf list of result(x)
   * ***add_one and multiple_two***: perform x + 1 / perform x * 2
-  * ***main function***: initializes the buffers and locks, creates the threads, and use signal to implement timeout mechanism.
+  * ***main function***: initializes the buffers and locks, creates the threads, and use signal to implement timeout mechanism. 
+
+
+
+# Notes about Concurrency
+
+## What is concurrency
+- the ability of a system to execute multiple tasks interatively, like performing tasks while play the music at the same time.
+- a design to break down task into multiple sub-tasks that can cooperate in concurrent manner, which can speed up the whole process.
+
+## How to do concurrency
+
+#### Multithreading and Multiprocessing:
+- This involves running ***multiple threads or processes***. Each thread or proccess represents a separate flow of control within the program, allowing different tasks to be executed concurrently.
+
+#### Asynchronous Programming: 
+- Asynchronous programming ***allows tasks to run independently of the main program flow***. This is commonly used in event-driven and non-blocking I/O systems, where tasks can be started and completed asynchronously without blocking the main program execution.
+
+#### Parallel Computing:
+- Parallel computing involves dividing a task into smaller sub-task that can be executed simultaneously on ***multiple processing units***. This can include parallelizing algorithms across CPU cores, using GPU computing, or even distributed computing across multiple machines.
+
+#### Message Passing:
+- Message passing concurrency involves communication between separate processes or threads through message passing mechanisms. This can include passing messages through channels, message queues, or shared memory.
+
+## Concurrency is not always beneficial 
+
+Here are some conditions or scenarios where concurrency may not be suitable or beneficial:
+
+1. Low Parallelism: \
+If the problem or task does not lend itself to parallel execution and there are few independent subtasks to execute concurrently, introducing concurrency may introduce unnecessary complexity without significant performance gains.
+
+3. Synchronization Overhead: \
+If the overhead of synchronizing access to shared resources (e.g., locks, semaphores) outweighs the benefits gained from parallel execution, concurrency may not be beneficial. Excessive synchronization can lead to contention, bottlenecks, and reduced scalability.
+
+4. Limited Resources: \
+If the system has limited resources such as CPU cores, memory, or I/O bandwidth, introducing concurrency may lead to resource contention and reduce overall performance due to increased context switching and contention for shared resources.
+
+5. Sequential Dependencies: \
+If the tasks or operations have inherent sequential dependencies or require strict ordering of execution, parallelizing them may not be feasible or may introduce correctness issues. In such cases, concurrency may be counterproductive or require complex synchronization mechanisms.
+
+6. I/O-bound Workloads: \
+If the tasks involve predominantly I/O-bound operations (e.g., disk I/O, network I/O) rather than CPU-bound computations, concurrency may not provide significant performance improvements. In I/O-bound scenarios, the benefits of parallel execution may be limited by the speed of I/O operations.
+
+7. Complexity and Maintenance: \
+Introducing concurrency adds complexity to the system design, implementation, and debugging. If the complexity introduced by concurrency outweighs the benefits in terms of performance or scalability, it may not be justified.
+
+8. Concurrency Hazards: \
+Some problems may exhibit concurrency hazards such as race conditions, deadlocks, livelocks, or priority inversion. If these hazards are difficult to mitigate or can lead to correctness or performance issues, concurrency may not be advisable.
+
 
 \
 Notes:
